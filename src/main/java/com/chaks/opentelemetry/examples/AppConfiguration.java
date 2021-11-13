@@ -24,7 +24,6 @@ public class AppConfiguration {
 
     @Bean
     public Tracer getRestTemplate() {
-        System.out.println(serviceName + "  " + lightstepHost + "  " + lightstepHost);
         OpenTelemetryConfiguration.newBuilder()
                 .setServiceName(serviceName)
                 .setAccessToken(lightstepToken)

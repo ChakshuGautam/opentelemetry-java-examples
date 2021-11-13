@@ -15,21 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @SpringBootApplication
-@RestController
 public class ExamplesApplication {
-
-    @Autowired
-    Tracer tracer;
 
     public static void main(String[] args) {
         SpringApplication.run(ExamplesApplication.class, args);
     }
-
-    @GetMapping("/")
-    ResponseEntity<String> test() {
-        Span span = tracer.spanBuilder("start example").startSpan();
-        span.end();
-        return new ResponseEntity<>("OK", HttpStatus.OK);
-    }
-
 }
